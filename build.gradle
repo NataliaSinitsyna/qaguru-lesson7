@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter:5.9.0',
+            'org.testng:testng:7.1.0',
+            "com.codeborne:selenide:6.10.1"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
